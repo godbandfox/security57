@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fxy.dhm.dao.mapper.SeRoleMapper">
+
+    <resultMap id="BaseResultMap" type="com.fxy.dhm.dao.domain.SeRole">
+            <result property="role_id" column="role_id" jdbcType="BIGINT"/>
+            <result property="role_name" column="role_name" jdbcType="VARCHAR"/>
+            <result property="role_key" column="role_key" jdbcType="VARCHAR"/>
+            <result property="dataScope" column="dataScope" jdbcType="INTEGER"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        role_id,role_name,role_key,
+        dataScope,status
+    </sql>
+</mapper>
