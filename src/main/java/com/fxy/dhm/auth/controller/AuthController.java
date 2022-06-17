@@ -31,12 +31,12 @@ public class AuthController {
 
     @PostMapping("/login")
     @ApiOperation("登录")
-   public R login(@RequestBody LoginDTO dto ) {
+    public R login(@RequestBody LoginDTO dto) {
         // 验证验证码是否成功
-        if (!dto.getCode().equals(redisTemplate.opsForValue().getAndDelete(Constants.CAPTCHA_CODE_KEY+dto.getUuid()))) {
+        if (!dto.getCode().equals(redisTemplate.opsForValue().getAndDelete(Constants.CAPTCHA_CODE_KEY + dto.getUuid()))) {
             return R.fail("验证码错误");
         }
-        return userService.login(dto.getUsername(),dto.getPassword());
+        return userService.login(dto.getUsername(), dto.getPassword());
 
     }
 
